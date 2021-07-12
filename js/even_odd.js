@@ -31,8 +31,22 @@ var userNumber = parseInt(prompt("Scegli un numero da 1 a 5!"));
 while (userNumber < 1 || userNumber > 5) {
     var userNumber = parseInt(prompt("Scegli un numero da 1 a 5!"));
 }
-console.log(userNumber);
+console.log("questo è il numero che ha inserito l'utente", userNumber);
 
 
 // FUNZIONE PER RANDOMIZZAZIONE NUMERO
 
+var max = 5;
+var min = 1;
+
+var cpuNumber = randomizeNumber();
+console.log(cpuNumber);
+// console.log("questo è il numero del computer: ", cpuNumber);
+
+function randomizeNumber(numbers) {
+    var randomNumber = Math.floor(Math.random() * (max) + min);
+    return randomNumber;
+}
+
+
+// FUNZIONE PER SOMMARE I DUE NUMERI E STABILIRE SE LA SOMMA E' PARI O DISPARI
