@@ -15,7 +15,28 @@ Creare una funzione per capire se la parola inserita è palindroma
 4- se valore false, la parola NON è palindroma;
 */
 
+var userWord = prompt("Scrivi una parola palindroma");
+console.log(userWord);
+
+function isPalindrome(string) {
+    var wordArray = userWord.split("");
+    console.table(wordArray);
+    var wordArrayReverse = wordArray.reverse();
+    console.table(wordArrayReverse);
+    var wordUser = wordArray.join("");
+    console.log(wordUser);
+    var wordRevers = wordArrayReverse.join("");
+    console.log(wordRevers);
+}
 
 
-console.log("JS OK");
+console.log(isPalindrome(userWord))
+
+
+/*
+if (wordArray[0] === wordReverse[0] && wordArray[wordArray.length - 1] === wordReverse[wordReverse.length - 1]) {
+    return true;
+} else {
+    return false;
+} */
 
