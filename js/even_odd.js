@@ -19,6 +19,11 @@ Dichiariamo chi ha vinto.
 6- dichiarazione vincitore (prima console.log e dopo stampo in HTML);
 */
 
+// RECUPERO ELEMENTI HTML
+
+var userNumberDisplay = document.getElementById("user-number");
+var cpuNumberDisplay = document.getElementById("cpu-number");
+
 // PROMPT SCELTA PARI O DISPARI
 
 var userChoice = prompt("Pari o dispari?", "pari").toLowerCase();
@@ -32,6 +37,8 @@ while (userNumber < 1 || userNumber > 5) {
     var userNumber = parseInt(prompt("Scegli un numero da 1 a 5!"));
 }
 console.log("numero Utente", userNumber);
+userNumberDisplay.innerHTML = userNumber;
+
 
 
 // FUNZIONE PER RANDOMIZZAZIONE NUMERO
@@ -41,6 +48,7 @@ var min = 1;
 
 var cpuNumber = randomizeNumber();
 console.log("Numero Computer", cpuNumber);
+cpuNumberDisplay.innerHTML = cpuNumber;
 
 function randomizeNumber(numbers) {
     var randomNumber = Math.floor(Math.random() * (max) + min);
@@ -75,6 +83,6 @@ if (sumEven === true && userChoice === "pari") {
 
 } else {
     console.log("HAI PERSO, RITENTA..");
-    result.innerHTML = "HAI PERSO, RITENTA.."
+    result.innerHTML = "HAI PERSO, RITENTA..";
 
 }
