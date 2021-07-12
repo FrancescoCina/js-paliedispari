@@ -31,7 +31,7 @@ var userNumber = parseInt(prompt("Scegli un numero da 1 a 5!"));
 while (userNumber < 1 || userNumber > 5) {
     var userNumber = parseInt(prompt("Scegli un numero da 1 a 5!"));
 }
-console.log("questo è il numero che ha inserito l'utente", userNumber);
+console.log("numero Utente", userNumber);
 
 
 // FUNZIONE PER RANDOMIZZAZIONE NUMERO
@@ -40,8 +40,7 @@ var max = 5;
 var min = 1;
 
 var cpuNumber = randomizeNumber();
-console.log(cpuNumber);
-// console.log("questo è il numero del computer: ", cpuNumber);
+console.log("Numero Computer", cpuNumber);
 
 function randomizeNumber(numbers) {
     var randomNumber = Math.floor(Math.random() * (max) + min);
@@ -50,3 +49,32 @@ function randomizeNumber(numbers) {
 
 
 // FUNZIONE PER SOMMARE I DUE NUMERI E STABILIRE SE LA SOMMA E' PARI O DISPARI
+
+function isEven(num1, num2) {
+    sum = num1 + num2;
+    console.log("somma numeri", sum);
+    var even = false;
+    if (sum % 2 === 0) {
+        even = true;
+        return true;
+    }
+    return false;
+}
+
+var result = document.getElementById("result-game");
+
+var sumEven = isEven(cpuNumber, userNumber);
+console.log(sumEven);
+
+if (sumEven === true && userChoice === "pari") {
+    console.log("COMPLIMENTI, HAI VINTO!!");
+    result.innerHTML = "COMPLIMENTI, HAI VINTO!!"
+} else if (sumEven === false && userChoice === "dispari") {
+    console.log("HAI VINTO, IL COMPUTER HA VINTO !");
+    result.innerHTML = "COMPLIMENTI, HAI VINTO!!"
+
+} else {
+    console.log("HAI PERSO, RITENTA..");
+    result.innerHTML = "HAI PERSO, RITENTA.."
+
+}
