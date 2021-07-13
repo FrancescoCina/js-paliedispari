@@ -21,6 +21,7 @@ var userWord = prompt("Scrivi una parola palindroma");
 console.log(userWord);
 
 function isPalindrome(word) {
+    word = word.toLowerCase();
     var wordArray = word.split("");
     console.table(wordArray);
 

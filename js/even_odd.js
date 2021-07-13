@@ -27,11 +27,13 @@ var cpuNumberDisplay = document.getElementById("cpu-number");
 // PROMPT SCELTA PARI O DISPARI
 
 var userChoice = prompt("Pari o dispari?", "pari").toLowerCase();
-console.log(userChoice);
+
 
 while (userChoice !== "pari" && userChoice !== "dispari") {
     userChoice = prompt("Pari o dispari?", "pari").toLowerCase();
 }
+
+console.log(userChoice);
 
 // PROMPT NUMERO TRA 1 E 5
 
@@ -52,7 +54,7 @@ console.log("Numero Computer", cpuNumber);
 cpuNumberDisplay.innerHTML = cpuNumber;
 
 function randomizeNumber(min, max) {
-    var randomNumber = Math.floor(Math.random() * (max) + min);
+    var randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
     return randomNumber;
 }
 
