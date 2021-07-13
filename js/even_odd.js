@@ -29,11 +29,15 @@ var cpuNumberDisplay = document.getElementById("cpu-number");
 var userChoice = prompt("Pari o dispari?", "pari").toLowerCase();
 console.log(userChoice);
 
+while (userChoice !== "pari" && userChoice !== "dispari") {
+    userChoice = prompt("Pari o dispari?", "pari").toLowerCase();
+}
+
 // PROMPT NUMERO TRA 1 E 5
 
 var userNumber = parseInt(prompt("Scegli un numero da 1 a 5!"));
 
-while (userNumber < 1 || userNumber > 5) {
+while (userNumber < 1 || userNumber > 5 || isNaN(userNumber)) {
     var userNumber = parseInt(prompt("Scegli un numero da 1 a 5!"));
 }
 console.log("numero Utente", userNumber);
@@ -43,14 +47,11 @@ userNumberDisplay.innerHTML = userNumber;
 
 // FUNZIONE PER RANDOMIZZAZIONE NUMERO
 
-var max = 5;
-var min = 1;
-
-var cpuNumber = randomizeNumber();
+var cpuNumber = randomizeNumber(1, 5);
 console.log("Numero Computer", cpuNumber);
 cpuNumberDisplay.innerHTML = cpuNumber;
 
-function randomizeNumber(numbers) {
+function randomizeNumber(min, max) {
     var randomNumber = Math.floor(Math.random() * (max) + min);
     return randomNumber;
 }
@@ -78,7 +79,7 @@ if (sumEven === true && userChoice === "pari") {
     console.log("COMPLIMENTI, HAI VINTO!!");
     result.innerHTML = "COMPLIMENTI, HAI VINTO!!"
 } else if (sumEven === false && userChoice === "dispari") {
-    console.log("HAI VINTO, IL COMPUTER HA VINTO !");
+    console.log("COMPLIMENTI, HAI VINTO!!");
     result.innerHTML = "COMPLIMENTI, HAI VINTO!!"
 
 } else {

@@ -20,8 +20,8 @@ var palindromeDisplay = document.getElementById("palindrome-word");
 var userWord = prompt("Scrivi una parola palindroma");
 console.log(userWord);
 
-function isPalindrome(string) {
-    var wordArray = userWord.split("");
+function isPalindrome(word) {
+    var wordArray = word.split("");
     console.table(wordArray);
 
     var wordRevers = "";
@@ -30,10 +30,10 @@ function isPalindrome(string) {
         wordRevers += wordArray[i];
         console.table(wordRevers);
     }
-    console.log(userWord);
+    console.log(word);
     console.log(wordRevers);
 
-    if (userWord === wordRevers) {
+    if (word === wordRevers) {
         console.log("sono uguali");
         return true;
     } else {
